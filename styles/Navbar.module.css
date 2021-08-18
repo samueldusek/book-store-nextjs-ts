@@ -1,0 +1,16 @@
+.Navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.link {
+  color: grey;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  transition: all 0.4s 0s ease-in-out;
+}
