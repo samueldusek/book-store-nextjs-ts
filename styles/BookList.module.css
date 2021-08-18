@@ -1,0 +1,17 @@
+.BookList {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.heading {
+  margin-bottom: 3rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 200px;
+  column-gap: 30px;
+  row-gap: 40px;
+}

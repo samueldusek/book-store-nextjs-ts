@@ -1,21 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 // Components
-import BookCard from "../components/BookCard";
-
-// Types
-import { Book } from "../libs/book";
+import BookList from "../components/BookList";
 
 const Home: NextPage = () => {
-  const book: Book = {
-    id: 1,
-    title: "Herry Potter",
-    isbn: 123123,
-    datePublished: "January 1, 2020",
-  };
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +17,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to Book Store!</h1>
 
-        <BookCard book={book} />
+        <BookList />
       </main>
 
       <footer className={styles.footer}></footer>
