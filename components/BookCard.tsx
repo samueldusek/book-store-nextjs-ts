@@ -22,7 +22,7 @@ function BookCard({ book }: BookCardProps) {
         />
         <div className={styles.text}>
           <h3 className={styles.heading}>{book.title}</h3>
-          <h5 className={styles.author}>Samuel Dusek</h5>
+          <h5 className={styles.author}>{book.author.name}</h5>
           <div className={styles.footer}>
             <div>
               <p className={styles.date}>{book.datePublished}</p>

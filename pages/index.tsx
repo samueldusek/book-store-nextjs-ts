@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <BookList />
+        <BookList page={2} />
       </main>
     </div>
   );

@@ -6,31 +6,19 @@ import BookCard from "./BookCard";
 // Styles
 import styles from "../styles/BookList.module.css";
 
+// Hooks
+import { useGetBooks } from "../hooks/book";
+
 // Types
-import { Book } from "../libs/book";
+type BookListProps = {
+  page: number;
+};
 
-import { useQuery } from "@apollo/client";
-import { GET_ALL_BOOKS } from "../queries/book";
-
-function BookList() {
-  const page: number = 1;
-  const { loading, error, data } = useQuery(GET_ALL_BOOKS, {
-    variables: { page },
-  });
-
-  let books: Book[] = [];
+function BookList({ page }: BookListProps) {
+  const { loading, error, books } = useGetBooks(page);
 
   if (loading) {
     return <div>Loading..</div>;
-  }
-
-  if (data) {
-    books = data.books.map((book: any) => ({
-      id: book.id,
-      title: book.title,
-      isbn: book.isbn,
-      datePublished: book.date_published,
-    }));
   }
 
   return (
