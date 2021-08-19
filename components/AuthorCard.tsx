@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styles
-import styles from "../styles/Author.module.css";
+import styles from "../styles/AuthorCard.module.css";
 
 // Types
 import { Author } from "../libs/author";
