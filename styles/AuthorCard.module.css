@@ -1,0 +1,29 @@
+.AuthorCard {
+  margin-top: 1rem;
+}
+
+.AuthorCard a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s 0s ease-in-out;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.AuthorCard a:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 70px;
+  border-radius: 50px;
+  box-shadow: -8px -8px 28px #d5d5d5, 8px 8px 28px #ffffff;
+}
+
+.name {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  text-align: center;
+}

@@ -35,11 +35,26 @@
   margin: 0px;
   text-decoration: none;
 }
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .date {
   margin: 0.4rem 0px;
 }
-
 .isbn {
   margin: 0px;
   color: lightgrey;
+}
+.link {
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  color: grey;
+  border-radius: 5px;
+  transition: all 0.4s 0s ease-in-out;
+  cursor: pointer;
+}
+.link:hover {
+  color: black;
 }

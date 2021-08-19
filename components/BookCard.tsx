@@ -1,11 +1,13 @@
 import React from "react";
-import Image from "next/image";
 
 // Styles
 import styles from "../styles/BookCard.module.css";
 
 // Types
 import { Book } from "../libs/book";
+
+// Random book covers
+import { bookCovers } from "../libs/book";
 
 type BookCardProps = {
   book: Book;
@@ -17,7 +19,7 @@ function BookCard({ book }: BookCardProps) {
       <div className={styles.box}>
         <img
           className={styles.image}
-          src="/images/books/books1.png"
+          src={bookCovers[(book.id - 1) % 10]}
           alt="Book cover"
         />
         <div className={styles.text}>
@@ -28,6 +30,7 @@ function BookCard({ book }: BookCardProps) {
               <p className={styles.date}>{book.datePublished}</p>
               <p className={styles.isbn}>{book.isbn}</p>
             </div>
+            <div className={styles.link}>MORE</div>
           </div>
         </div>
       </div>
