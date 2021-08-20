@@ -8,13 +8,16 @@ import client from "../apollo-client";
 // Components
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Container from "../components/Container";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <Container>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </Container>
     </ApolloProvider>
   );
 }

@@ -1,9 +1,5 @@
-.container {
+.HomePage {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  max-width: 1199.98px;
-  margin: auto;
-  height: 100vh;
-  width: 98%;
+  align-items: flex-start;
+  width: 100%;
 }
