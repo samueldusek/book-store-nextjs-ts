@@ -1,24 +1,28 @@
 import React from "react";
+import Link from "next/link";
 
+// Resources
 import { bookCovers } from "../../libs/book";
 
 // Components
 import BookList from "../../components/BookList";
 
-// Types
-import { Book } from "../../libs/book";
-
 // Styles
 import styles from "../../styles/BookPage.module.css";
 
+// Hooks
+import { useGetBook } from "../../hooks/book";
+import { useRouter } from "next/router";
+
 function BookPage() {
-  const book: Book = {
-    id: 1,
-    title: "Harry Potter",
-    author: { id: 1, name: "Samuel Dusek" },
-    isbn: 2423,
-    datePublished: "1.9.2021",
-  };
+  const router = useRouter();
+  const { id } = router.query;
+  const { loading, error, book } = useGetBook(id);
+
+  if (loading) {
+    return <div>Loading..</div>;
+  }
+
   return (
     <main className={styles.BookPage}>
       <h1 className={styles.heading}>{book.title}</h1>
@@ -31,13 +35,15 @@ function BookPage() {
             <div className={styles.author}>
               <h4 className={styles.infoHeading}>Author</h4>
               <h2 className={styles.authorName}>
-                <a>{book.author.name}</a>
+                <Link href={`/authors/${book.author.id}`}>
+                  <a>{book.author.name}</a>
+                </Link>
               </h2>
             </div>
             <div className={styles.data}>
               <h4 className={styles.infoHeading}>Chapters</h4>
               Chapter 1<h4 className={styles.infoHeading}>Published</h4>
-              <h3 className={styles.bookData}>20.20.2020</h3>
+              <h3 className={styles.bookData}>{book.datePublished}</h3>
               <h4 className={styles.infoHeading}>ISBN</h4>
               <h3 className={styles.bookData}>{book.isbn}</h3>
             </div>

@@ -28,7 +28,7 @@ export function useGetBooks(page: number) {
   return { loading, error, books };
 }
 
-export function useGetBook(id: number) {
+export function useGetBook(id: string | string[] | undefined) {
   const { loading, error, data } = useQuery(GET_BOOK, { variables: { id } });
 
   let book: Book = {
