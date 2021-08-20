@@ -27,6 +27,8 @@
 
 .bookCover img {
   width: 100%;
+  box-shadow: -8px -8px 28px #d5d5d5, 8px 8px 28px #ffffff;
+  border-radius: 20px;
 }
 
 .bookInfoText {

@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 // Components
 import BookCard from "./BookCard";
@@ -12,9 +13,11 @@ import { useGetBooks } from "../hooks/book";
 // Types
 type BookListProps = {
   page: number;
+  oneCol: boolean;
+  maxBooks: number;
 };
 
-function BookList({ page }: BookListProps) {
+function BookList({ page, oneCol, maxBooks }: BookListProps) {
   const { loading, error, books } = useGetBooks(page);
 
   if (loading) {
@@ -22,10 +25,18 @@ function BookList({ page }: BookListProps) {
   }
 
   return (
-    <section className={styles.BookList}>
+    <section
+      className={classNames(styles.BookList, {
+        [styles.BookListFull]: oneCol,
+      })}
+    >
       <h2>Book List</h2>
-      <div className={styles.list}>
-        {books.map((book) => (
+      <div
+        className={classNames(styles.list, {
+          [styles.oneColList]: oneCol,
+        })}
+      >
+        {books.slice(0, maxBooks).map((book) => (
           <BookCard book={book} key={book.id} />
         ))}
       </div>

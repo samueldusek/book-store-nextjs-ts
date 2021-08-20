@@ -2,6 +2,9 @@ import React from "react";
 
 import { bookCovers } from "../../libs/book";
 
+// Components
+import BookList from "../../components/BookList";
+
 // Types
 import { Book } from "../../libs/book";
 
@@ -41,7 +44,7 @@ function BookPage() {
           </div>
         </div>
         <div className={styles.bookList}>
-          {/* <BookList oneCol maxBooks={4} page={getRandomFromTo(1, 5)} /> */}
+          <BookList oneCol maxBooks={4} page={3} />
         </div>
       </section>
     </main>
