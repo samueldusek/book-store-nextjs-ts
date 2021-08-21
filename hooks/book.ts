@@ -43,8 +43,6 @@ export function useGetBook(id: string | string[] | undefined) {
   };
 
   if (data) {
-    console.log(data.book);
-
     book = {
       id: data.book.id,
       title: data.book.title,
@@ -55,6 +53,14 @@ export function useGetBook(id: string | string[] | undefined) {
         name: data.book.author.name,
       },
     };
+    if (data.book.chapters.length > 0) {
+      book.chapters = data.book.chapters.map((chapter: any) => {
+        return {
+          id: chapter.id,
+          title: chapter.title,
+        };
+      });
+    }
   }
 
   return { loading, error, book };

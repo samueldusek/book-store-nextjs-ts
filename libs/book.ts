@@ -20,4 +20,8 @@ export type Book = {
     id: number;
     name: string;
   };
+  chapters?: {
+    id?: number;
+    title?: string;
+  }[];
 };

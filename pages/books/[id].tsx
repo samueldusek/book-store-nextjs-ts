@@ -24,6 +24,18 @@ function BookPage() {
     return <div>Loading..</div>;
   }
 
+  const chapters = !book.chapters ? (
+    <p>None</p>
+  ) : (
+    <ul className={styles.chapterList}>
+      {book.chapters.map((chapter) => (
+        <li className={styles.chapter} key={chapter.id}>
+          {chapter.title}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <main className={styles.BookPage}>
       <h1 className={styles.heading}>{book.title}</h1>
@@ -43,7 +55,8 @@ function BookPage() {
             </div>
             <div className={styles.data}>
               <h4 className={styles.infoHeading}>Chapters</h4>
-              Chapter 1<h4 className={styles.infoHeading}>Published</h4>
+              {chapters}
+              <h4 className={styles.infoHeading}>Published</h4>
               <h3 className={styles.bookData}>
                 {format(new Date(book.datePublished), "do 'of' LLLL yyyy")}
               </h3>
