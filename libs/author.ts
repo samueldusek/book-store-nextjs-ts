@@ -1,3 +1,5 @@
+import { Book } from "./book";
+
 export const authorAvatars: string[] = [
   "/images/authors/author1.svg",
   "/images/authors/author2.svg",
@@ -17,5 +19,5 @@ export type Author = {
   birthplace?: string;
   dateOfBirth?: string;
   dateOfDeath?: string;
-  books?: { id: number; title: string; isbn: number; datePublished: string }[];
+  books?: Book[];
 };

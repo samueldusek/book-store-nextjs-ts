@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 
 // Components
 import AuthorList from "../../components/AuthorList";
+import AuthorsBookList from "../../components/AuthorsBookList";
 
 function AuthorPage() {
   const router = useRouter();
@@ -46,7 +47,7 @@ function AuthorPage() {
           </div>
         </div>
         <div className={styles.bookList}>
-          {/* <AuthorBookList oneCol authorBooks={books} author={author.name} /> */}
+          <AuthorsBookList books={author.books} author={author.name} />
         </div>
       </section>
       <AuthorList isRow maxAuthors={5} page={3} />

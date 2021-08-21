@@ -46,6 +46,10 @@ export function useGetAuthor(id: string | string[] | undefined) {
           title: book.title,
           isbn: book.isbn,
           datePublished: book.date_published,
+          author: {
+            id: data.author.id,
+            name: data.author.name,
+          },
         };
       });
     }

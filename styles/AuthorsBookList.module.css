@@ -1,0 +1,15 @@
+.AuthorsBookList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.heading {
+  margin-bottom: 3rem;
+}
+
+.warning {
+  text-align: center;
+  margin: 0;
+  line-height: 2rem;
+}

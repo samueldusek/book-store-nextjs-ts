@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// Functions
+import { getRandInt } from "../libs/utils";
+
 // Components
 import BookList from "./BookList";
 
@@ -10,7 +13,7 @@ import styles from "../styles/RandomBookList.module.css";
 import { useGetBooks } from "../hooks/book";
 
 function RandomBookList() {
-  const { loading, error, books } = useGetBooks(3);
+  const { loading, error, books } = useGetBooks(getRandInt(1, 5));
 
   return (
     <section className={styles.RandomBookList}>
