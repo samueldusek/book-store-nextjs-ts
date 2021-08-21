@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -7,10 +6,9 @@ import styles from "../styles/Home.module.css";
 
 // Components
 import HomeBookList from "../components/HomeBookList";
-import AuthorList from "../components/AuthorList";
+import HomeAuthorList from "../components/HomeAuthorList";
 
 const Home: NextPage = () => {
-  const [authorPage, setAuthorPage] = useState(1);
   return (
     <main className={styles.HomePage}>
       <Head>
@@ -19,12 +17,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeBookList />
-      <AuthorList
-        isRow={false}
-        maxAuthors={10}
-        page={authorPage}
-        setPage={setAuthorPage}
-      />
+      <HomeAuthorList />
     </main>
   );
 };

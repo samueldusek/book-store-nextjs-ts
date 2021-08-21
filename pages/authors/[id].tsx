@@ -1,5 +1,9 @@
 import React from "react";
 
+// Functions
+
+import { getRandInt } from "../../libs/utils";
+
 // Resources
 import { authorAvatars } from "../../libs/author";
 
@@ -50,7 +54,7 @@ function AuthorPage() {
           <AuthorsBookList books={author.books} author={author.name} />
         </div>
       </section>
-      <AuthorList isRow maxAuthors={5} page={3} />
+      <AuthorList isRow maxAuthors={5} page={getRandInt(1, 5)} />
     </main>
   );
 }
