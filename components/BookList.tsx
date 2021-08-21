@@ -3,34 +3,32 @@ import classNames from "classnames";
 
 // Components
 import BookCard from "./BookCard";
+import Pagination from "./Pagination";
 
 // Styles
 import styles from "../styles/BookList.module.css";
 
-// Hooks
-import { useGetBooks } from "../hooks/book";
-
 // Types
+import { Book } from "../libs/book";
+
 type BookListProps = {
-  page: number;
   oneCol: boolean;
   maxBooks: number;
+  books: Book[];
+  loading: boolean;
 };
 
-function BookList({ page, oneCol, maxBooks }: BookListProps) {
-  const { loading, error, books } = useGetBooks(page);
-
+function BookList({ oneCol, maxBooks, books, loading }: BookListProps) {
   if (loading) {
     return <div>Loading..</div>;
   }
 
   return (
-    <section
+    <div
       className={classNames(styles.BookList, {
         [styles.BookListFull]: oneCol,
       })}
     >
-      <h2>Book List</h2>
       <div
         className={classNames(styles.list, {
           [styles.oneColList]: oneCol,
@@ -40,7 +38,7 @@ function BookList({ page, oneCol, maxBooks }: BookListProps) {
           <BookCard book={book} key={book.id} />
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 

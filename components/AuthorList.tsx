@@ -15,9 +15,10 @@ type AuthorListProps = {
   page: number;
   isRow: boolean;
   maxAuthors: number;
+  setPage?: Function;
 };
 
-function AuthorList({ page, isRow, maxAuthors }: AuthorListProps) {
+function AuthorList({ page, isRow, maxAuthors, setPage }: AuthorListProps) {
   const { loading, error, authors } = useGetAuthors(page);
 
   if (loading) {
