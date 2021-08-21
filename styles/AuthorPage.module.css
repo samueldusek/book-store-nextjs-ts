@@ -1,0 +1,54 @@
+.AuthorPage {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 4.2rem;
+  margin: 1rem 0px 3rem 0px;
+}
+
+.authorSection {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.authorInfo {
+  width: 54%;
+  margin-right: 2%;
+  display: flex;
+  height: min-content;
+}
+
+.image {
+  width: 50%;
+  max-width: 400px;
+  filter: drop-shadow(10px 10px 10px grey);
+}
+
+.authorInfoText {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infoHeading {
+  color: grey;
+  margin: 0px;
+  margin-top: 1.5rem;
+}
+
+.authorBirthplace {
+  margin: 0.5rem 0px;
+}
+
+.authorData {
+  margin: 0.1rem 0;
+}
+
+.bookList {
+  width: 43%;
+}

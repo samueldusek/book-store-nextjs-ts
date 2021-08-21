@@ -18,3 +18,14 @@
   column-gap: 5%;
   row-gap: 30px;
 }
+
+.AuthorListRow {
+  width: 100%;
+}
+
+.authorsRow {
+  width: 100%;
+  margin-left: 0%;
+  column-gap: 1%;
+  grid-template-columns: repeat(5, 1fr);
+}

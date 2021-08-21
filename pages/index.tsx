@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BookList maxBooks={10} oneCol={false} page={2} />
-      <AuthorList page={1} />
+      <AuthorList isRow={false} maxAuthors={10} page={1} />
     </main>
   );
 };

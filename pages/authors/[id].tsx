@@ -10,6 +10,9 @@ import styles from "../../styles/AuthorPage.module.css";
 import { useGetAuthor } from "../../hooks/author";
 import { useRouter } from "next/router";
 
+// Components
+import AuthorList from "../../components/AuthorList";
+
 function AuthorPage() {
   const router = useRouter();
   const { id } = router.query;
@@ -46,7 +49,7 @@ function AuthorPage() {
           {/* <AuthorBookList oneCol authorBooks={books} author={author.name} /> */}
         </div>
       </section>
-      {/* <AuthorList isRow maxAuthors={5} page={getRandomFromTo(1, 5)} /> */}
+      <AuthorList isRow maxAuthors={5} page={3} />
     </main>
   );
 }

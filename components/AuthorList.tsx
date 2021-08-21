@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 // Components
 import AuthorCard from "./AuthorCard";
@@ -12,9 +13,11 @@ import { useGetAuthors } from "../hooks/author";
 // Types
 type AuthorListProps = {
   page: number;
+  isRow: boolean;
+  maxAuthors: number;
 };
 
-function AuthorList({ page }: AuthorListProps) {
+function AuthorList({ page, isRow, maxAuthors }: AuthorListProps) {
   const { loading, error, authors } = useGetAuthors(page);
 
   if (loading) {
@@ -22,11 +25,21 @@ function AuthorList({ page }: AuthorListProps) {
   }
 
   return (
-    <section className={styles.AuthorList}>
-      <h2 className={styles.heading}>See our authors</h2>
+    <section
+      className={classNames(styles.AuthorList, {
+        [styles.AuthorListRow]: isRow,
+      })}
+    >
+      <h2 className={styles.heading}>
+        {isRow ? "Other top authors" : "See our authors"}
+      </h2>
 
-      <div className={styles.authors}>
-        {authors.map((author) => (
+      <div
+        className={classNames(styles.authors, {
+          [styles.authorsRow]: isRow,
+        })}
+      >
+        {authors.slice(0, maxAuthors).map((author) => (
           <AuthorCard key={author.id} author={author} />
         ))}
       </div>
