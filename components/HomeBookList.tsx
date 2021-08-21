@@ -14,10 +14,6 @@ function HomeBookList() {
   const [page, setPage] = useState(1);
   const { loading, error, books } = useGetBooks(page);
 
-  if (loading) {
-    return <div>Loading..</div>;
-  }
-
   return (
     <section className={styles.HomeBookList}>
       <h2>Book List</h2>

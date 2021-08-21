@@ -5,7 +5,7 @@ import Link from "next/link";
 import { bookCovers } from "../../libs/book";
 
 // Components
-import BookList from "../../components/BookList";
+import RandomBookList from "../../components/RandomBookList";
 
 // Styles
 import styles from "../../styles/BookPage.module.css";
@@ -50,7 +50,7 @@ function BookPage() {
           </div>
         </div>
         <div className={styles.bookList}>
-          <BookList oneCol maxBooks={4} page={3} />
+          <RandomBookList />
         </div>
       </section>
     </main>

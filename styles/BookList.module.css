@@ -1,11 +1,7 @@
 .BookList {
   display: flex;
   flex-direction: column;
-  width: 75%;
-}
-
-.heading {
-  margin-bottom: 3rem;
+  width: 100%;
 }
 
 .list {
