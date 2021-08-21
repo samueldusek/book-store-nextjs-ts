@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { format } from "date-fns";
 
 // Resources
 import { bookCovers } from "../../libs/book";
@@ -43,7 +44,9 @@ function BookPage() {
             <div className={styles.data}>
               <h4 className={styles.infoHeading}>Chapters</h4>
               Chapter 1<h4 className={styles.infoHeading}>Published</h4>
-              <h3 className={styles.bookData}>{book.datePublished}</h3>
+              <h3 className={styles.bookData}>
+                {format(new Date(book.datePublished), "do 'of' LLLL yyyy")}
+              </h3>
               <h4 className={styles.infoHeading}>ISBN</h4>
               <h3 className={styles.bookData}>{book.isbn}</h3>
             </div>

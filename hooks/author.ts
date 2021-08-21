@@ -28,6 +28,9 @@ export function useGetAuthor(id: string | string[] | undefined) {
   let author: Author = {
     id: 0,
     name: "Author",
+    birthplace: "Place",
+    dateOfBirth: "00-00-0000",
+    dateOfDeath: "00-00-0000",
   };
 
   if (data) {

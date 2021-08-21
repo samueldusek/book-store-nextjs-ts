@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { format } from "date-fns";
 
 // Styles
 import styles from "../styles/BookCard.module.css";
@@ -32,7 +33,9 @@ function BookCard({ book }: BookCardProps) {
           </h5>
           <div className={styles.footer}>
             <div>
-              <p className={styles.date}>{book.datePublished}</p>
+              <p className={styles.date}>
+                {format(new Date(book.datePublished), "do 'of' LLLL yyyy")}
+              </p>
               <p className={styles.isbn}>{book.isbn}</p>
             </div>
             <Link href={`/books/${book.id}`}>

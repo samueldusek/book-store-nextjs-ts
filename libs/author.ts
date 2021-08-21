@@ -16,8 +16,8 @@ export const authorAvatars: string[] = [
 export type Author = {
   id: number;
   name: string;
-  birthplace?: string;
-  dateOfBirth?: string;
-  dateOfDeath?: string;
+  birthplace: string;
+  dateOfBirth: string;
+  dateOfDeath: string;
   books?: Book[];
 };

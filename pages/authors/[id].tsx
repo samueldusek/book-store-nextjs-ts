@@ -1,7 +1,7 @@
 import React from "react";
+import { format } from "date-fns";
 
 // Functions
-
 import { getRandInt } from "../../libs/utils";
 
 // Resources
@@ -44,9 +44,13 @@ function AuthorPage() {
             </div>
             <div className={styles.data}>
               <h4 className={styles.infoHeading}>Born</h4>
-              <h3 className={styles.authorData}>{author.dateOfBirth}</h3>
+              <h3 className={styles.authorData}>
+                {format(new Date(author.dateOfBirth), "do 'of' LLLL yyyy")}
+              </h3>
               <h4 className={styles.infoHeading}>Passed</h4>
-              <h3 className={styles.authorData}>{author.dateOfDeath}</h3>
+              <h3 className={styles.authorData}>
+                {format(new Date(author.dateOfDeath), "do 'of' LLLL yyyy")}
+              </h3>
             </div>
           </div>
         </div>

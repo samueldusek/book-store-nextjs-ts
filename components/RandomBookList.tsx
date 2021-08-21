@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // Functions
 import { getRandInt } from "../libs/utils";
+import { shuffleArray } from "../libs/utils";
 
 // Components
 import BookList from "./BookList";
@@ -18,7 +19,12 @@ function RandomBookList() {
   return (
     <section className={styles.RandomBookList}>
       <h2>More books for you</h2>
-      <BookList books={books} oneCol={true} loading={loading} maxBooks={4} />
+      <BookList
+        books={shuffleArray(books)}
+        oneCol={true}
+        loading={loading}
+        maxBooks={4}
+      />
     </section>
   );
 }
